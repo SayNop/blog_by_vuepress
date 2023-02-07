@@ -1,0 +1,16 @@
+{
+  "name": "blog_by_vuepress",
+  "version": "1.0.0",
+  "description": "Blog based on vuepress",
+  "main": "index.js",
+  "repository": "git@github.com:SayNop/blog_by_vuepress.git",
+  "author": "Leopold",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.8"
+  },
+  "scripts": {
+    "blog:dev": "vuepress dev blog",
+    "blog:build": "vuepress build blog"
+  }
+}

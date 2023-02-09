@@ -7,7 +7,7 @@
     // 全局变量
     --theme-color #60c9e6
     --bg-height 80vh
-    --bg-pic url(/assets/imgs/bg01.jpg)
+    --bg-pic url(/assets/imgs/bg07.jpeg)
 
     // 明亮模式变量
     --card-bg-color #fff
@@ -46,7 +46,7 @@ html
 #home
     display flex
     flex-direction column
-    background var(--bg-pic) no-repeat left top
+    background var(--bg-pic) no-repeat center / cover
     background-attachment fixed
 
 #slider
@@ -205,7 +205,7 @@ html
 .header
     width 100%
     padding 29px 9% 
-    z-index 1
+    z-index 9
     background var(--header-color)
     transition-property opacity
     transition-timing-function cubic-bezier(.4,0,.2,1)
@@ -214,7 +214,7 @@ html
 
 .header_container
     display: flex
-    align-items flex-end
+    align-items center
     justify-content space-between
 
 .header_title
@@ -241,3 +241,20 @@ html
     border-radius 50%
     overflow hidden
     fill var(--font-color)
+
+// 移动端适配
+@media (max-width: 767px)
+    .header
+        opacity 1 !important
+    .card_border
+        min-height auto
+    #slider
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        padding: 145px 20px 0 20px;
+        overflow: auto;
+        background: rgba(255,255,255,.7);

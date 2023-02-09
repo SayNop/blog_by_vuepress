@@ -100,10 +100,14 @@ export default {
         }
     }, 
     methods: {
-        handleScroll(){
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            if(this.$refs.demos.offsetTop) 
-                this.header_opacity = scrollTop / (this.$refs.demos.offsetTop/3)
+        handleScroll()
+        {   
+            // 桌面端进行动态渲染
+            if(window.screen.availWidth > 767) {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                if(this.$refs.demos.offsetTop) 
+                    this.header_opacity = scrollTop / (this.$refs.demos.offsetTop/3)
+            }
         },
         handleDark(){
             this.is_dark = !this.is_dark

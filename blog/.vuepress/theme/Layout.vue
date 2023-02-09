@@ -1,10 +1,10 @@
 <template>
     <div id="home">
-        <header class="header">
+        <header class="header" :style="{opacity: header_opacity}">
             <div class="header_container">
                 <div><a class="header_title" href="/">Leopold</a></div>
                 <div class="appearance">
-                    <button class="switch" type="button" role="switch" aria-label="toggle dark mode" aria-checked="false" @click="handleDark">
+                    <button class="switch" type="button"  @click="handleDark">
                         <span class="check">
                             <span class="icon"><!--[-->
                                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="sun" v-show="is_dark">
@@ -29,7 +29,7 @@
         </header>
         <!-- <div id="background" v-show="top_flag"> -->
         <div id="background">
-            <h1>我的在线笔记{{ top_flag }}</h1>
+            <h1>我的在线笔记{{ header_opacity }}</h1>
         </div>
         <div id="content_container" ref="demos">
             <div id="content">
@@ -103,17 +103,15 @@ export default {
     data() {
         return {
             top_flag: true,
+            header_opacity: 0,
             is_dark: false
         }
     }, 
     methods: {
         handleScroll(){
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            if(scrollTop > this.$refs.demos.offsetTop) {
-                this.top_flag=false
-            } else {
-                this.top_flag=true
-            }
+            if(this.$refs.demos.offsetTop) 
+                this.header_opacity = scrollTop / (this.$refs.demos.offsetTop/3)
         },
         handleDark(){
             this.is_dark = !this.is_dark

@@ -4,12 +4,20 @@
     box-sizing border-box
 
 :root
+    // 全局变量
+    --theme-color #60c9e6
+    --bg-height 80vh
+
+    // 明亮模式变量
     --card-bg-color #fff
+    --header-color #ffffffb3
     --font-color #213547
     --tag-color #f6f6f6
+
     
 .dark
     --card-bg-color #000
+    --header-color #000000b3
     --font-color #ffffffde
     --tag-color #2f2f2f
 
@@ -27,7 +35,7 @@ html
     position relative
 
 #background
-    min-height 80vh
+    min-height var(--bg-height)
     display center
 
 #app
@@ -52,9 +60,10 @@ html
     margin-bottom 24px
 
 .tags_brand
-    padding 12px 24px
-    background-color #49dcc8
+    padding 24px
+    background-color var(--theme-color)
     font-weight 900
+    color var(--font-color)
 
 .tags
     padding 15px
@@ -166,7 +175,7 @@ html
     background var(--tag-color)
     margin-bottom: 4px
     &:hover
-        border-color #42b8a8
+        border-color var(--theme-color)
 
 .page_footer
     width 100%
@@ -191,7 +200,7 @@ html
     width 100%
     padding 29px 9% 
     z-index 1
-    background var(--card-bg-color)
+    background var(--header-color)
     transition-property opacity
     transition-timing-function cubic-bezier(.4,0,.2,1)
     transition-duration .15s
@@ -216,7 +225,7 @@ html
     background-color: transparent;
     padding: 0.5rem;
     &:hover
-        border 2px solid #42b8a8
+        border 2px solid var(--theme-color)
 
 .icon
     position relative

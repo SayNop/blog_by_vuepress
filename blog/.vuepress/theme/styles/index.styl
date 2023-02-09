@@ -7,6 +7,7 @@
     // 全局变量
     --theme-color #60c9e6
     --bg-height 80vh
+    --bg-pic url(/assets/imgs/bg01.jpg)
 
     // 明亮模式变量
     --card-bg-color #fff
@@ -45,6 +46,8 @@ html
 #home
     display flex
     flex-direction column
+    background var(--bg-pic) no-repeat left top
+    background-attachment fixed
 
 #slider
     width 16rem
@@ -101,6 +104,9 @@ html
     margin-top 1rem
     margin-bottom 1rem
     text-align left
+    font-size 0.9rem
+    line-height 1.3rem
+    padding-left 1rem
 
 
 #article_container

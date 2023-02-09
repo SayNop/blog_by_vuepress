@@ -29,7 +29,7 @@
         </header>
         <!-- <div id="background" v-show="top_flag"> -->
         <div id="background">
-            <h1>我的在线笔记{{ header_opacity }}</h1>
+            <!-- <h1>我的在线笔记{{ header_opacity }}</h1> -->
         </div>
         <div id="content_container" ref="demos">
             <div id="content">
@@ -38,18 +38,10 @@
                         <div class="slider_top card_border">
                             <div class="tags_brand">文章标签</div>
                             <div class="tags">
-                                <span class="article_tag">python</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
-                                <span class="article_tag">vue</span>
+                                <span class="article_tag">Python</span>
+                                <span class="article_tag">Vue</span>
+                                <span class="article_tag">Android</span>
+                                <span class="article_tag">Assemble</span>
                             </div>
                         </div>
                         <div class="slider_bottom card_border">

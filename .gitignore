@@ -17,3 +17,6 @@ coverage/
 
 # 忽略mac自带文件
 .DS_Store
+
+# 忽略yarn
+yarn.lock

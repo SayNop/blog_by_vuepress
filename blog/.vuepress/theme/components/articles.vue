@@ -21,16 +21,5 @@
 
 <style scoped lang="stylus">
     // scoped: 该组件才能使用的样式
-    .card_content_container
-        position absolute
-        height 50%
-        width 100%
-        bottom 0
-
-    .card_content
-        position absolute
-        height 75%
-        width 100%
-        text-align: left 
-        padding 20px
+    @import '../styles'
 </style>>

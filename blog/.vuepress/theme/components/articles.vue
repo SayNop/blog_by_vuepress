@@ -21,6 +21,5 @@
 
 <style scoped lang="stylus">
     // scoped: 该组件才能使用的样式
-    @import '../styles/index'
     @import '../styles/articles'
 </style>

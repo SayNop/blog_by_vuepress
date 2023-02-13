@@ -23,7 +23,6 @@ html
     font-family Arial,'Microsoft Yahei'
     color var(--font-color)
 
-
 .card_border
     border-radius 10px
     overflow hidden
@@ -46,18 +45,12 @@ html
     background $bg-pic no-repeat center / cover
     background-attachment fixed
 
-#slider
-    width 16rem
-
 #content_container
     width 82%
     margin 0 auto
 
 #content
     display flex
-
-.slider_top
-    margin-bottom 24px
 
 .tags_brand
     padding 24px
@@ -68,41 +61,6 @@ html
 .tags
     padding 15px
     margin 0 0 8px 0
-
-.slider_bottom
-    padding 12px
-    text-align center
-    min-height auto
-
-.avatar
-    height 6rem
-    width 6rem
-    background-size cover
-    background-position center
-    background-color rgb(220 252 230)
-    border-radius 9999px
-    margin-left auto
-    margin-right auto
-    margin-top 1rem
-
-.author
-    font-weight 700
-    font-size 1.25rem
-    margin-top 1rem
-
-.summary
-    display grid
-    grid-template-columns repeat(3, auto)
-    margin-top 1rem
-
-.connection
-    display grid
-    grid-template-columns repeat(2, auto)
-    margin-top 1rem
-    margin-bottom 1rem
-    text-align left
-    font-size 0.9rem
-    line-height 1.3rem
 
 #article_container
     margin-left 24px
@@ -121,7 +79,6 @@ html
     display flex
     align-items flex-end
     justify-content space-evenly
-    
 
 .card_title
     position absolute
@@ -187,8 +144,6 @@ html
 
 // 移动端适配
 @media (max-width: 767px)
-    .slider_top
-        min-height auto
     #info
         position fixed
         top 0
@@ -199,8 +154,6 @@ html
         padding 145px 20px 0 20px
         overflow auto
         background rgba(255,255,255,.7)
-    #slider
-        width 100%
     .appearance
         display flex
     .show_info
@@ -211,8 +164,6 @@ html
     .hidden_info
         opacity 0
         visibility hidden
-    .connection
-        padding-left 2rem
     #article_container
         margin-left 0
 

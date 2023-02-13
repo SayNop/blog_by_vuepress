@@ -1,5 +1,4 @@
 <template>
-    <!-- <header class="header" :style="{opacity: header_opacity}"> -->
     <header class="header">
         <div class="header_container">
             <div><a class="header_title" href="/">Leopold</a></div>
@@ -63,3 +62,9 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="stylus">
+    // scoped: 该组件才能使用的样式
+    @import '../styles/index'
+    @import '../styles/header'
+</style>

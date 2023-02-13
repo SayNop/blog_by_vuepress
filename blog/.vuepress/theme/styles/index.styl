@@ -1,14 +1,10 @@
+@require './palette'
 *
     margin 0
     padding 0 
     box-sizing border-box
 
 :root
-    // 全局变量
-    --theme-color #60c9e6
-    --bg-height 80vh
-    --bg-pic url(/assets/imgs/bg07.jpeg)
-
     // 明亮模式变量
     --card-bg-color #fff
     --header-color #ffffffb3
@@ -36,7 +32,7 @@ html
     position relative
 
 #background
-    min-height var(--bg-height)
+    min-height $bg-height
     display center
     position relative
 
@@ -47,7 +43,7 @@ html
 #home
     display flex
     flex-direction column
-    background var(--bg-pic) no-repeat center / cover
+    background $bg-pic no-repeat center / cover
     background-attachment fixed
 
 #slider
@@ -65,7 +61,7 @@ html
 
 .tags_brand
     padding 24px
-    background-color var(--theme-color)
+    background-color $theme-color
     font-weight 900
     color var(--font-color)
 
@@ -107,8 +103,6 @@ html
     text-align left
     font-size 0.9rem
     line-height 1.3rem
-    padding-left 1rem
-
 
 #article_container
     margin-left 24px
@@ -168,57 +162,7 @@ html
     background var(--tag-color)
     margin-bottom 10px
     &:hover, &:active
-        border-color var(--theme-color)
-
-.page_footer
-    width 100%
-    margin-left auto
-    margin-right auto
-    display flex
-
-.footer_blank
-    width: 16rem
-
-.footer_middle
-    flex-grow 1
-    margin 2rem 0
-    min-height auto
-    padding 30px
-    width 50%
-    color #7a7a7a
-    text-align center
-
-
-.header
-    width 100%
-    padding 29px 9% 
-    z-index 9
-    background var(--header-color)
-    transition-property opacity
-    transition-timing-function cubic-bezier(.4,0,.2,1)
-    transition-duration .15s
-    position fixed
-
-.header_container
-    display flex
-    align-items center
-    justify-content space-between
-
-.header_title
-    text-decoration none
-    color var(--font-color)
-    font-size 1.2rem
-    font-weight 700
-    &:hover, &:active
-        opacity: .6
-
-.switch
-    border-radius 0.5rem;
-    border 2px solid transparent
-    background-color transparent
-    padding 0.5rem
-    &:hover, &:active
-        border-color var(--theme-color)
+        border-color $theme-color
 
 .icon
     position relative
@@ -228,10 +172,6 @@ html
     border-radius 50%
     overflow hidden
     fill var(--font-color)
-
-
-.mobile_list_btn
-    display none
 
 .pull_down
     width 2rem
@@ -243,13 +183,10 @@ html
     bottom 1rem
     fill var(--card-bg-color)
     animation animation_icon .8s cubic-bezier(.445, .05, .55, .95) .2s infinite alternate
-    -webkit-animation animation_icon .8s cubic-bezier(.445, .05, .55, .95) .2s infinite alternate
+    // -webkit-animation animation_icon .8s cubic-bezier(.445, .05, .55, .95) .2s infinite alternate
 
 // 移动端适配
 @media (max-width: 767px)
-    .header
-        // 移动模式下header常驻
-        opacity 1 !important
     .slider_top
         min-height auto
     #info
@@ -266,33 +203,16 @@ html
         width 100%
     .appearance
         display flex
-    .mobile_list_btn
-        position relative
-        display block
-        width 36px
-        span
-            position absolute
-            width 50%
-            height 2px
-            left 0
-            right 0
-            margin auto
-            background-color var(--font-color)
-        .btn_top
-            top 10px
-        .btn_middle
-            top 50%
-            margin-top -1px
-        .btn_bottom
-            bottom 10px
     .show_info
         opacity 1
         visibility visible
         transition all .3s
-        -webkit-transition all .3s
+        // -webkit-transition all .3s
     .hidden_info
         opacity 0
         visibility hidden
+    .connection
+        padding-left 2rem
     #article_container
         margin-left 0
 
@@ -300,7 +220,9 @@ html
 @keyframes animation_icon
     0%
         opacity: 0
-        -webkit-transform translateY(-30%)
+        transform translateY(-30%)
+        // -webkit-transform translateY(-30%)
     100%
         opacity: 1
-        -webkit-transform none
+        transform none
+        // -webkit-transform none

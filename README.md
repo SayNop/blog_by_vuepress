@@ -8,3 +8,6 @@ yarn blog:dev
 # build
 yarn blog:build
 ```
+
+## package
+vuepress = "1.9.8"

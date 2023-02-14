@@ -3,7 +3,7 @@
         <div class="header_container">
             <div><a class="header_title" href="/">Leopold</a></div>
             <div class="appearance">
-                <button class="switch" type="button"  @click="handleDark">
+                <button class="switch" type="button" @click="handleDark">
                     <span class="check">
                         <span class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="sun" v-show="is_dark">

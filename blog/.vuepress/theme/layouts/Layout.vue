@@ -9,11 +9,10 @@
         </div>
         <div id="content_container" ref="demos">
             <div id="content">
-                <sidebar :class="show_sidebar?'show_info' :'hidden_info'"/>
+                <sidebar :class="show_sidebar ? 'show_info' : 'hidden_info'"/>
                 <div id="article_container">
-                    <!-- <div>{{$page.frontmatter.layout}}</div> -->
-                    <articles/>
-                    <!-- <detail/> -->
+                    <articles v-if="$page.frontmatter.layout == 'home'"/>
+                    <detail v-else/>
                 </div>
             </div>
             <footer_wrapper/>

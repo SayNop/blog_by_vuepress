@@ -1,5 +1,7 @@
 <template>
-    <div>Detail</div>
+    <div class="card_border">
+        <Content/>
+    </div>
 </template>
 
 <script>

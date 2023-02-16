@@ -1,5 +1,5 @@
 ---
-layout: detail
+layout: home
 title: My blog
 date: 2023-2-14
 category: vue

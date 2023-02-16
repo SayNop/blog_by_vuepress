@@ -1,6 +1,5 @@
 <template>
     <div class="card_border content_container">
-        <!-- <div>{{$frontmatter}}</div>-->
         <!-- <div>{{$page}}</div>  -->
         <div class="frontmatter_info">
             <h1 class="frontmatter-title">{{ $frontmatter.title }}</h1>
@@ -17,8 +16,10 @@
 </template>
 
 <script>
+// markdown使用样式，不可受作用域影响
+import '../styles/markdown'
 export default {
-    name: 'detail'
+    name: 'detail',
 }
 </script>
 

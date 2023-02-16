@@ -1,0 +1,651 @@
+@require './palette'
+
+code, kbd, samp, pre
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+
+.content__default
+    // 选中文字的颜色
+    // ::selection {
+    //     background:#b981d1;
+    //     color:white
+    // } 
+
+    // 标题
+    h1, h2, h3, h4, h5, h6
+        margin: .72em 0;
+        font-weight 600
+        outline none
+        a
+            display none
+    h1
+        letter-spacing -0.02em
+        line-height 2.5rem
+        font-size 1.75rem
+        //font-size 1.5rem
+    h2
+        border-top 1px solid var(--divider-color)
+        margin 3rem 0 1rem
+        padding-top 1.5rem
+        letter-spacing -0.02em
+        line-height 2rem
+        font-size 1.5rem
+        // font-size 1.2rem
+    h3
+        margin 2rem 0 0
+        letter-spacing -0.01em
+        line-height 1.75rem
+        font-size 1.25rem
+        // font-size: 1rem;
+    h4
+        font-size 1rem
+        // font-size 0.75rem
+    h5
+        font-size 0.75rem
+        // font-size 0.5rem
+    h6
+        font-size 0.5rem
+
+
+    /*段落*/
+    p
+        line-height 28px
+        // font-size: 15px;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
+        // margin: 0;
+        // line-height: 26px;
+    
+    p, summary
+        margin 16px 0
+
+
+    blockquote 
+        margin 16px 0
+        border-left 2px solid var(--divider-color)
+        padding-left 16px
+        transition border-color 0.5s
+        // margin-bottom: 16px;
+        // margin-top: 16px;
+        // padding: 10px 10px 10px 20px;
+        // font-size: 0.9em;
+        // background: #f7f7f7;
+        // border-left: 3px solid #1f6fb5;
+        // color: #6a737d;
+        // overflow: auto;
+        // -webkit-overflow-scrolling: touch;
+        // line-height: 26px;
+
+    blockquote p
+        margin 0
+        font-size 16px
+        color var(--tag-color)
+        transition color 0.5s
+        // line-height: 26px;
+
+    a
+        // text-decoration: none;
+        // font-weight: bold;
+        // color: #1f6fb5;
+        // border-bottom: 1px solid #1f6fb5;
+        // display: none;
+        font-weight 500
+        color $theme-color
+        text-decoration-style dotted
+        transition color 0.25s
+        &:hover
+            color $theme-color-dark
+
+    strong
+        font-weight 600
+        // font-weight bold
+    // strong::before
+    //     content '「'
+    // strong::after
+    //     content '」'
+
+
+    /*  todo item 对齐 */
+    input[type="checkbox"] {
+        margin-top: calc(1em - 2px);
+        margin-right: 5px;
+        left: -3px;
+    }
+
+    /* 列表 */
+    ul, ol
+        // margin-top: 8px;
+        // margin-bottom: 8px;
+        // padding-left: 25px;
+        padding-left 1.25rem
+        margin 16px 0
+
+    ul
+        // list-style-type: disc;
+        list-style disc
+    ul ul
+        // list-style-type: square;
+        list-style square
+    ol
+        // list-style-type: decimal;
+        list-style decimal
+    li + li
+        // 多个li作为兄弟时
+        margin-top: 8px;
+    li ol, li ul
+        margin: 8px 0 0
+    /* 列表内容 */
+    li section
+        font-size 14px
+        line-height 25px
+
+    // 表格
+    table
+        display block
+        border-collapse collapse
+        margin 20px 0
+        overflow-x auto
+    table tr
+        // border: 0;
+        // border-top: 1px solid #ccc;
+        // background-color: white;
+        border-top 1px solid var(--divider-color)
+        transition background-color 0.5s
+    table tr:nth-child(2n)
+        // background-color #F8F8F8
+        background-color #f9f9f9
+    table tr th, table tr td
+        // font-size: 14px;
+        // border: 1px solid #ccc;
+        // padding: 5px 10px;
+        // text-align: left;
+        border 1px solid var(--divider-color)
+        padding 12px 16px
+    table tr th
+        // font-weight: bold;
+        // background-color: #f0f0f0;
+        font-size 16px
+        font-weight 600
+        background-color #f0f0f0
+    
+    th
+        font-size 16px
+        font-weight 600
+        background-color var(--table-h-color)
+
+    // 分割线
+    hr
+        // height: 1px;
+        // padding: 0;
+        // border: none;
+        // text-align: center;
+        // background-image: linear-gradient(to right, rgba(231,93,109,0.3), #0974e2, rgba(255,216,181,0.3))
+        margin 16px 0
+        border none
+        border-top 1px solid var(--divider-color);
+
+
+    /* 文章插图 */
+    img {
+        display: block;
+        margin: 10px auto;
+        width: 85%;
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow:0px 4px 12px #84A1A8;
+        border: 0px;
+    }
+
+    /* 上角标 */
+    .md-footnote {
+    font-weight: bold;
+    color: #1f6fb5;
+    }
+    .md-footnote > .md-text:before {
+    content: '['
+    }
+    .md-footnote > .md-text:after {
+    content: ']'
+    }
+
+
+    /* 下角标 */
+    .md-def-name {
+        padding-right: 1.8ch;
+    }
+    .md-def-name:before {
+        content: '[';
+        color: #000;
+    }
+    .md-def-name:after {
+        color: #000;
+    }
+
+.dark .content__default th
+        background-color var(--table-h-color)
+
+
+    // code
+    // inline code
+    // p code,
+    // span code,
+    // li code {
+    //     font-size: 15px;
+    //     line-height: 25px;
+    //     word-wrap: break-word;
+    //     padding: 2px 4px;
+    //     border-radius: 4px;
+    //     margin: 0 2px;
+    //     // color:  rgb(235, 76, 55);;
+    //     // background-color: rgba(27,31,35,.05);
+    //     background-color: #fff5f5;
+    //     color: #ff502c;
+    //     word-break: break-all;
+    // }
+.content__default :not(pre, h1, h2, h3, h4, h5, h6) > code
+        font-size $code-font-size
+
+.content__default :not(pre) > code
+        border-radius 4px
+        padding 3px 6px
+        color var(--code-color)
+        background-color var(--tag-color)
+        // transition color 0.5s, background-color 0.5s
+
+.content__default h1 > code,
+.content__default h2 > code,
+.content__default h3 > code
+        font-size 0.9em
+
+.content__default a > code
+        color $theme-color
+        transition color 0.25s
+        &:hover
+            color: $theme-color-dark
+    /*
+    code, pre {
+        border-radius: 3px;
+        background-color:#f7f7f7;
+        color: inherit;
+    }
+
+    code {
+        font-family: Consolas, Monaco, Andale Mono, monospace;
+        margin: 0 2px;
+    }
+
+    pre {
+        line-height: 1.7em;
+        overflow: auto;
+        padding: 18px 15px 12px;
+        border-left: 5px solid #f7f7f7;
+    }
+
+    pre > code {
+        border: 0;
+        display: inline;
+        max-width: initial;
+        padding: 0;
+        margin: 0;
+        overflow: initial;
+        line-height: inherit;
+        font-size: .85em;
+        white-space: pre;
+        background: 0 0;
+
+    }
+
+    code
+        color: #666555;
+    */
+
+.content__default div[class*='language-']
+        position relative
+        margin 16px -24px
+        background-color var(--code-bg-color)
+        overflow-x auto
+        transition background-color 0.5s
+
+
+@media (min-width: 640px)
+    .content__default div[class*='language-']
+        border-radius: 8px;
+        margin: 16px 0;
+
+@media (max-width: 639px)
+    .content__default li div[class*='language-']
+        border-radius: 8px 0 0 8px
+
+.content__default div[class*='language-'] + div[class*='language-'],
+.content__default div[class$='-api'] + div[class*='language-'],
+.content__default div[class*='language-'] + div[class$='-api'] > div[class*='language-']
+        margin-top: -8px;
+
+
+.content__default [class*='language-'] pre,
+.content__default [class*='language-'] code
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+
+
+.content__default [class*='language-'] pre
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 16px 0;
+        background: transparent;
+        overflow-x: auto;
+
+
+.content__default [class*='language-'] > code
+        display: block;
+        padding: 0 24px;
+        width: fit-content;
+        line-height: $code-line-height
+        font-size: $code-font-size
+        color: $code-block-color
+        transition: color 0.5s;
+
+
+.content__default .highlight-lines 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding-top: 16px;
+        width: 100%;
+        line-height: $code-line-height
+        // font-family: var(--vp-font-family-mono);
+        font-size: $code-font-size
+        user-select: none;
+        overflow: hidden;
+
+
+.content__default .highlight-lines .highlighted
+        background-color: $code-line-highlight-color
+        transition: background-color 0.5s;
+
+
+.content__default div[class*='language-'].line-numbers-mode
+        padding-left: 32px;
+
+
+.content__default div[class*='language-'].line-numbers-mode pre
+        padding-left: 16px;
+
+
+.content__default .line-numbers-wrapper 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        border-right: 1px solid var(--divider-color);
+        padding-top: 16px;
+        width: 32px;
+        text-align: center;
+        // font-family: var(--vp-font-family-mono);
+        line-height: $code-line-height
+        font-size: $code-font-size
+        color: $code-line-number-color
+        transition: border-color 0.5s, color 0.5s;
+
+
+.content__default [class*='language-'] > span.copy
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 2;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--code-bg-color)
+        opacity: 0;
+        cursor: pointer;
+        // background-image: var(--vp-icon-copy);
+        background-position: 50%;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        transition: opacity 0.25s;
+
+
+.content__default [class*='language-']:hover > span.copy
+        opacity: 1;
+
+
+.content__default [class*='language-'] > span.copy:hover
+        background-color: $code-copy-code-hover-bg
+
+
+.content__default [class*='language-'] > span.copy.copied,
+.content__default [class*='language-'] > span.copy:hover.copied
+        border-radius: 0 4px 4px 0;
+        background-color: $code-copy-code-hover-bg
+        // background-image: var(--vp-icon-copied);
+
+
+.content__default [class*='language-'] > span.copy.copied::before,
+.content__default [class*='language-'] > span.copy:hover.copied::before
+        position: relative;
+        left: -65px;
+        display: block;
+        border-radius: 4px 0 0 4px;
+        padding-top: 8px;
+        width: 64px;
+        height: 40px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        color: $code-copy-code-active-text
+        background-color: $code-copy-code-hover-bg
+        white-space: nowrap;
+        content: "Copied";
+
+
+.content__default [class*='language-']:before
+        position: absolute;
+        top: 6px;
+        right: 12px;
+        z-index: 2;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--code-color);
+        transition: color 0.5s, opacity 0.5s;
+
+
+.content__default [class*='language-']:hover:before
+        opacity: 0;
+
+.content__default 
+    div[class~='language-html']:before,
+    div[class~='language-markup']:before {
+    content: 'html';
+    }
+
+    div[class~='language-md']:before,
+    div[class~='language-markdown']:before {
+    content: 'md';
+    }
+
+    div[class~='language-css']:before {
+    content: 'css';
+    }
+
+    div[class~='language-sass']:before {
+    content: 'sass';
+    }
+
+    div[class~='language-scss']:before {
+    content: 'scss';
+    }
+
+    div[class~='language-less']:before {
+    content: 'less';
+    }
+
+    div[class~='language-stylus']:before {
+    content: 'styl';
+    }
+
+    div[class~='language-js']:before,
+    div[class~='language-javascript']:before {
+    content: 'js';
+    }
+
+    div[class~='language-ts']:before,
+    div[class~='language-typescript']:before {
+    content: 'ts';
+    }
+
+    div[class~='language-json']:before {
+    content: 'json';
+    }
+
+    div[class~='language-rb']:before,
+    div[class~='language-ruby']:before {
+    content: 'rb';
+    }
+
+    div[class~='language-py']:before,
+    div[class~='language-python']:before {
+    content: 'py';
+    }
+
+    div[class~='language-sh']:before,
+    div[class~='language-bash']:before {
+    content: 'sh';
+    }
+
+    div[class~='language-php']:before {
+    content: 'php';
+    }
+
+    div[class~='language-go']:before {
+    content: 'go';
+    }
+
+    div[class~='language-rust']:before {
+    content: 'rust';
+    }
+
+    div[class~='language-java']:before {
+    content: 'java';
+    }
+
+    div[class~='language-c']:before {
+    content: 'c';
+    }
+
+    div[class~='language-yaml']:before {
+    content: 'yaml';
+    }
+
+    div[class~='language-dockerfile']:before {
+    content: 'dockerfile';
+    }
+
+    div[class~='language-vue']:before {
+    content: 'vue';
+    }
+
+    /**
+    * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.
+    * Based on https://github.com/chriskempson/tomorrow-theme
+    *
+    * @author Rose Pritchard
+    */
+    .token.comment,
+    .token.block-comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        color: #999;
+    }
+
+    .token.punctuation {
+        color: #ccc;
+    }
+
+    .token.tag,
+    .token.attr-name,
+    .token.namespace,
+    .token.deleted {
+        color: #e2777a;
+    }
+
+    .token.function-name {
+        color: #6196cc;
+    }
+
+    .token.boolean,
+    .token.number,
+    .token.function {
+        color: #f08d49;
+    }
+
+    .token.property,
+    .token.class-name,
+    .token.constant,
+    .token.symbol {
+        color: #f8c555;
+    }
+
+    .token.selector,
+    .token.important,
+    .token.atrule,
+    .token.keyword,
+    .token.builtin {
+        color: #cc99cd;
+    }
+
+    .token.string,
+    .token.char,
+    .token.attr-value,
+    .token.regex,
+    .token.variable {
+        color: #7ec699;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url {
+        color: #67cdcc;
+    }
+
+    .token.important,
+    .token.bold {
+        font-weight: bold;
+    }
+
+    .token.italic {
+        font-style: italic;
+    }
+
+    .token.entity {
+        cursor: help;
+    }
+
+    .token.inserted {
+        color: green;
+    }
+
+    /* pre code */
+
+    .container pre {
+        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+        padding: 15px;
+        margin-bottom: 0;
+        overflow: auto;
+    }

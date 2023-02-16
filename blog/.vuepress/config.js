@@ -3,6 +3,10 @@ module.exports = {
     description: 'Blog powerd by vuepress',
     plugins: [
         '@vuepress/last-updated',
-        '@vuepress/blog'
-    ]
+        '@vuepress/blog',
+        // '@vuepress/plugin-toc'
+    ],
+    markdown: {
+        lineNumbers: true
+    }
 }

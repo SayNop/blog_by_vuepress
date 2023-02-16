@@ -12,5 +12,8 @@
   "scripts": {
     "blog:dev": "vuepress dev blog",
     "blog:build": "vuepress build blog"
+  },
+  "dependencies": {
+    "prismjs": "^1.29.0"
   }
 }

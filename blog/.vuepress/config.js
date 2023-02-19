@@ -8,8 +8,6 @@ module.exports = {
             selector: 'div[class*="language-"]',
             align: 'top',
             backgroundTransition: false,
-            // successText: 'String',
-            staticIcon: true
         }]
         // '@vuepress/plugin-toc'
     ],

@@ -5,8 +5,10 @@ module.exports = {
         '@vuepress/last-updated',
         '@vuepress/blog',
         ['vuepress-plugin-code-copy', {
+            selector: 'div[class*="language-"]',
             align: 'top',
-            successText: 'String',
+            backgroundTransition: false,
+            // successText: 'String',
             staticIcon: true
         }]
         // '@vuepress/plugin-toc'

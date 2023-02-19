@@ -571,7 +571,8 @@ code, kbd, samp, pre
         height 40px
         //     background-color: var(--code-bg-color)
         //     opacity: 0;
-        //     cursor: pointer;
+        z-index: 3;
+        cursor: pointer;
         //     // background-image: var(--vp-icon-copy);
         //     background-position: 50%;
         //     background-size: 20px;
@@ -588,7 +589,7 @@ code, kbd, samp, pre
     [class*=language-] .code-copy > .success
         position: relative;
         left: -65px;
-        top -19px
+        top 0 !important
         display block
         border-radius 4px 0 0 4px
         padding-top 8px

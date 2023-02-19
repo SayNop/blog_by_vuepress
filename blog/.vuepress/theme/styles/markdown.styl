@@ -400,58 +400,58 @@ code, kbd, samp, pre
         transition: border-color 0.5s, color 0.5s;
 
 
-.content__default [class*='language-'] > span.copy
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        z-index: 2;
-        display: block;
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-        width: 40px;
-        height: 40px;
-        background-color: var(--code-bg-color)
-        opacity: 0;
-        cursor: pointer;
-        // background-image: var(--vp-icon-copy);
-        background-position: 50%;
-        background-size: 20px;
-        background-repeat: no-repeat;
-        transition: opacity 0.25s;
+// .content__default [class*='language-'] > span.copy
+//         position: absolute;
+//         top: 8px;
+//         right: 8px;
+//         z-index: 2;
+//         display: block;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 4px;
+//         width: 40px;
+//         height: 40px;
+//         background-color: var(--code-bg-color)
+//         opacity: 0;
+//         cursor: pointer;
+//         // background-image: var(--vp-icon-copy);
+//         background-position: 50%;
+//         background-size: 20px;
+//         background-repeat: no-repeat;
+//         transition: opacity 0.25s;
 
 
-.content__default [class*='language-']:hover > span.copy
-        opacity: 1;
+// .content__default [class*='language-']:hover > span.copy
+//         opacity: 1;
 
 
-.content__default [class*='language-'] > span.copy:hover
-        background-color: $code-copy-code-hover-bg
+// .content__default [class*='language-'] > span.copy:hover
+//         background-color: $code-copy-code-hover-bg
 
 
-.content__default [class*='language-'] > span.copy.copied,
-.content__default [class*='language-'] > span.copy:hover.copied
-        border-radius: 0 4px 4px 0;
-        background-color: $code-copy-code-hover-bg
-        // background-image: var(--vp-icon-copied);
+// .content__default [class*='language-'] > span.copy.copied,
+// .content__default [class*='language-'] > span.copy:hover.copied
+//         border-radius: 0 4px 4px 0;
+//         background-color: $code-copy-code-hover-bg
+//         // background-image: var(--vp-icon-copied);
 
 
-.content__default [class*='language-'] > span.copy.copied::before,
-.content__default [class*='language-'] > span.copy:hover.copied::before
-        position: relative;
-        left: -65px;
-        display: block;
-        border-radius: 4px 0 0 4px;
-        padding-top: 8px;
-        width: 64px;
-        height: 40px;
-        text-align: center;
-        font-size: 12px;
-        font-weight: 500;
-        color: $code-copy-code-active-text
-        background-color: $code-copy-code-hover-bg
-        white-space: nowrap;
-        content: "Copied";
+// .content__default [class*='language-'] > span.copy.copied::before,
+// .content__default [class*='language-'] > span.copy:hover.copied::before
+//         position: relative;
+//         left: -65px;
+//         display: block;
+//         border-radius: 4px 0 0 4px;
+//         padding-top: 8px;
+//         width: 64px;
+//         height: 40px;
+//         text-align: center;
+//         font-size: 12px;
+//         font-weight: 500;
+//         color: $code-copy-code-active-text
+//         background-color: $code-copy-code-hover-bg
+//         white-space: nowrap;
+//         content: "Copied";
 
 
 .content__default [class*='language-']:before
@@ -461,7 +461,7 @@ code, kbd, samp, pre
         z-index: 2;
         font-size: 12px;
         font-weight: 500;
-        color: var(--code-color);
+        color $code-copy-code-active-text
         transition: color 0.5s, opacity 0.5s;
 
 
@@ -559,6 +559,47 @@ code, kbd, samp, pre
     div[class~='language-vue']:before {
     content: 'vue';
     }
+
+    // ****** copy-button ******
+    [class*=language-] > .code-copy
+        position absolute
+        top 8px
+        right 8px
+        display block
+        border-radius 4px
+        width 40px
+        height 40px
+        //     background-color: var(--code-bg-color)
+        //     opacity: 0;
+        //     cursor: pointer;
+        //     // background-image: var(--vp-icon-copy);
+        //     background-position: 50%;
+        //     background-size: 20px;
+        //     background-repeat: no-repeat;
+        //     transition: opacity .4s
+        &:hover
+            background-color: $code-copy-code-hover-bg
+
+    // icon color
+    [class*=language-] .code-copy svg > path:last-child
+        fill $code-copy-code-active-text
+    
+    // success-text
+    [class*=language-] .code-copy > .success
+        position: relative;
+        left: -65px;
+        top -19px
+        display block
+        border-radius 4px 0 0 4px
+        padding-top 8px
+        width 64px
+        height 40px
+        text-align center
+        font-size 12px
+        font-weight 500
+        color $code-copy-code-active-text
+        background-color $code-copy-code-hover-bg
+        white-space nowrap
 
     /**
     * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.

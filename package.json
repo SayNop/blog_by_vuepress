@@ -14,6 +14,7 @@
     "blog:build": "vuepress build blog"
   },
   "dependencies": {
-    "prismjs": "^1.29.0"
+    "prismjs": "^1.29.0",
+    "vuepress-plugin-code-copy": "^1.0.6"
   }
 }

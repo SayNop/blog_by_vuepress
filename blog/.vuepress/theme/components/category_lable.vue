@@ -9,7 +9,7 @@ export default {
     ],
     methods: {
         go_to_tcategory_list(path) {
-            this.$router.push('/category/' + path)
+            this.$router.push('/categories/' + path)
         }
     }
 }

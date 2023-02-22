@@ -28,6 +28,9 @@
 import category_lable from './category_lable'
 import tag_lable from './tag_lable'
 export default {
+    props: [
+        'articles'
+    ],
     components: {
         category_lable,
         tag_lable,

@@ -7,6 +7,7 @@
   "author": "Leopold",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.4",
     "vuepress": "^1.9.8"
   },
   "scripts": {

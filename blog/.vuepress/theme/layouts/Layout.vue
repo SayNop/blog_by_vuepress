@@ -11,8 +11,8 @@
             <div id="content">
                 <sidebar :class="show_sidebar ? 'show_info' : 'hidden_info'"/>
                 <div id="article_container">
-                    <articles v-if="$page.frontmatter.layout == 'home'"/>
-                    <detail v-else/>
+                    <detail v-if="$page.frontmatter.layout == 'detail'"/>
+                    <articles articles="" v-else/>
                 </div>
             </div>
             <footer_wrapper/>

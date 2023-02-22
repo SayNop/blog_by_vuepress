@@ -4,10 +4,10 @@
             <div class="sidebar_top card_border">
                 <div class="tags_brand">文章标签</div>
                 <div class="tags">
-                    <span class="article_tag">Python</span>
-                    <span class="article_tag">Vue</span>
-                    <span class="article_tag">Android</span>
-                    <span class="article_tag">Assemble</span>
+                    <tag_lable :datas="'Python'" />
+                    <tag_lable :datas="'Vue'" />
+                    <tag_lable :datas="'Android'" />
+                    <tag_lable :datas="'Assemble'" />
                 </div>
             </div>
             <div class="sidebar_bottom card_border">
@@ -31,3 +31,12 @@
     // scoped: 该组件才能使用的样式
     @import '../styles/sidebar'
 </style>>
+
+<script>
+import tag_lable from './tag_lable'
+export default {
+    components: {
+        tag_lable,
+    }
+}
+</script>

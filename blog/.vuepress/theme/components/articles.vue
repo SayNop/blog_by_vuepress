@@ -24,8 +24,9 @@
                 <div class="card_content_container">
                     <div class="card_content">{{ item.frontmatter.discription }}</div>
                     <div class="card_tag">
-                        <span class="article_category">{{ item.frontmatter.category }}</span>
-                        <span class="article_tag" v-for="tag in item.frontmatter.tags" :key="tag">{{ tag }}</span>
+                        <!-- <span class="article_category">{{ item.frontmatter.category }}</span> -->
+                        <category_lable :datas="item.frontmatter.category"/>
+                        <tag_lable :datas="tag"  v-for="tag in item.frontmatter.tags" :key="tag" />
                     </div> 
                 </div>
             </div>
@@ -39,8 +40,13 @@
 </style>
 
 <script>
+import category_lable from './category_lable'
+import tag_lable from './tag_lable'
 export default {
-    name: 'articles',
+    components: {
+        category_lable,
+        tag_lable,
+    },
     methods: {
         go_to_detail(path) {
             this.$router.push(path)

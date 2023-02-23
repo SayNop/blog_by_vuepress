@@ -8,6 +8,7 @@
     // 明亮模式变量
     // 全局背景
     --card-bg-color #fff
+    --card-shadow rgba(0,0,0,.2)
     --header-color #ffffffb3
     --font-color #213547
     --code-color #476582
@@ -22,6 +23,7 @@
     
 .dark
     --card-bg-color #000
+    --card-shadow rgba(255,255,255,.2)
     --header-color #000000b3
     --font-color #ffffffde
     --code-color #c9def1
@@ -41,6 +43,7 @@ html
     min-height 20rem
     background var(--card-bg-color)
     position relative
+    box-shadow 0 0 10px var(--card-shadow)
 
 #background
     min-height $bg-height
@@ -158,6 +161,11 @@ html
     fill var(--card-bg-color)
     animation animation_icon .8s cubic-bezier(.445, .05, .55, .95) .2s infinite alternate
     // -webkit-animation animation_icon .8s cubic-bezier(.445, .05, .55, .95) .2s infinite alternate
+
+.article_nav
+    position fixed
+    top 139px
+    z-index 9
 
 // 移动端适配
 @media (max-width: 767px)

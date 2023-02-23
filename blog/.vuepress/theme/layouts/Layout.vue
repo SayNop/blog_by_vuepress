@@ -9,7 +9,8 @@
         </div>
         <div id="content_container" ref="demos">
             <div id="content">
-                <sidebar :class="show_sidebar ? 'show_info' : 'hidden_info'"/>
+                <div class="none" v-if="!is_mobile && is_nav" style="width: 16rem" />
+                <sidebar :class="is_mobile ? (show_sidebar ? 'show_info' : 'hidden_info') : (is_nav ? 'article_nav' : '') "/>
                 <div id="article_container">
                     <detail v-if="$page.frontmatter.layout == 'detail'"/>
                     <articles articles="" v-else/>
@@ -39,7 +40,9 @@ export default {
     data() {
         return {
             header_opacity: 0,
-            show_sidebar: false
+            show_sidebar: false,
+            is_mobile: false,
+            is_nav: false
         }
     }, 
     methods: {
@@ -50,6 +53,11 @@ export default {
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
                 if(this.$refs.demos.offsetTop) 
                     this.header_opacity = scrollTop / (this.$refs.demos.offsetTop/3)
+                if(this.$page.frontmatter.layout == 'detail')
+                    if (this.header_opacity > 2.5)
+                        this.is_nav = true
+                    else
+                        this.is_nav = false
             }
         },
         showSlide(){
@@ -58,7 +66,12 @@ export default {
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll, true)
-        if(window.screen.availWidth > 767) document.body.addEventListener('touchstart',function(){})
+        if(window.screen.availWidth > 767) {
+            document.body.addEventListener('touchstart',function(){})
+            this.is_mobile = false
+        } else {
+            this.is_mobile = true
+        }
     }
 }
 </script>

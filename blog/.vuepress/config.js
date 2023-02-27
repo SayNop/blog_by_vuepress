@@ -25,7 +25,7 @@ module.exports = {
                     path: '/categories/',
                     frontmatter: {
                         title: 'Category',
-                        layout: 'tags'
+                        layout: 'categories'
                     },
                     pagination: {
                         lengthPerPage: 10,
@@ -44,5 +44,17 @@ module.exports = {
     ],
     markdown: {
         lineNumbers: true
-    }
+    },
+    themeConfig: {
+        footer: {
+          copyright: [
+            {
+              text: 'Released under the MIT License.',
+            },
+            {
+              text: 'Copyright © 2023-present Leopold',
+            },
+          ],
+        },
+      },
 }

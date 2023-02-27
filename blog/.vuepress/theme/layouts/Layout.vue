@@ -13,7 +13,8 @@
                 <sidebar :class="is_mobile ? (show_sidebar ? 'show_info' : 'hidden_info') : (is_nav ? 'article_nav' : '') "/>
                 <div id="article_container">
                     <detail v-if="$page.frontmatter.layout == 'detail'"/>
-                    <articles articles="" v-else/>
+                    <articles :articles="article_list" v-else-if="$page.frontmatter.layout == 'home'"/>
+                    <category_list v-else-if="$page.frontmatter.layout == 'categories'" />
                 </div>
             </div>
             <footer_wrapper/>
@@ -27,6 +28,7 @@ import header_wrapper from '../components/header'
 import sidebar from '../components/sidebar'
 import articles from '../components/articles'
 import footer_wrapper from '../components/footer'
+import category_list from '../components/category_list'
 
 
 export default {
@@ -35,7 +37,8 @@ export default {
         header_wrapper,
         sidebar,
         articles,
-        footer_wrapper
+        footer_wrapper,
+        category_list
     },
     data() {
         return {
@@ -71,6 +74,20 @@ export default {
             this.is_mobile = false
         } else {
             this.is_mobile = true
+        }
+    },
+    computed: {
+        article_list() 
+        {
+            let res = []
+            if(this.$page.frontmatter.layout == 'home')
+                this.$site.pages.forEach((item) => {
+                    if(item.frontmatter.layout=='detail')
+                        res.push(item)
+                })
+            // else if(this.$page.frontmatter.layout == 'tags')
+            //     this.$
+            return res
         }
     }
 }

@@ -1,15 +1,15 @@
 <template>
-    <span class="article_tag" @click="go_to_tag_list(datas)">{{ datas }}</span>
+    <span class="article_tag" @click="go_to_tag_list(tag_name)">{{ tag_name }}</span>
 </template>
 
 <script>
 export default {
     props: [
-        'datas'
+        'tag_name'
     ],
     methods: {
         go_to_tag_list(path) {
-            this.$router.push('/tags/' + path)
+            this.$router.push('tags' + path)
         }
     }
 }

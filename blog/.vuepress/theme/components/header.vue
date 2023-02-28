@@ -48,8 +48,11 @@ export default {
             this.is_dark = !this.is_dark
             if(this.is_dark){
                 document.documentElement.className = 'dark'
+                localStorage.setItem('theme', 'dark')
+
             } else {
                 document.documentElement.className = ''
+                localStorage.setItem('theme', 'light')
             }
         },
         show_Slide(){
@@ -57,6 +60,18 @@ export default {
         }
     },
     mounted() {
+        if( localStorage.getItem('theme') ) {
+            if( localStorage.getItem('theme') == 'dark' ) {
+                this.is_dark=true
+                document.documentElement.className = 'dark'
+            } else {
+                this.is_dark=false
+                document.documentElement.className = ''
+            }
+        } else {
+            localStorage.setItem('theme', 'light')
+            this.is_dark = false
+        }
         window.addEventListener('scroll', this.handleScroll, true)
         if(window.screen.availWidth > 767) document.body.addEventListener('touchstart',function(){})
     }

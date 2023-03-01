@@ -5,7 +5,7 @@
                 <div class="tags_brand">{{ $page.frontmatter.layout == 'detail'?'本文大纲':'文章标签' }}</div>
                 <section class="article_sidebar" v-if="$page.frontmatter.layout == 'detail'">
                     <ul>
-                        <li :class="'level' + item.level" v-for="item in $page.headers" :key="item.slug">
+                        <li :id="item.height" :class="'level' + item.level" v-for="item in $page.headers" :key="item.slug">
                             <a class="sidebar-link" :href="'#'+item.slug">{{ item.title }}</a>
                         </li>
                     </ul>

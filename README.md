@@ -15,6 +15,6 @@ yarn blog:build
 v14.21.2
 
 ## package
-vuepress = "1.9.8"
-@vuepress/plugin-blog = "1.9.4"
-vuepress-plugin-code-copy = "1.0.6"
+vuepress = "1.9.8"<br>
+@vuepress/plugin-blog = "1.9.4"<br>
+vuepress-plugin-code-copy = "1.0.6"<br>

@@ -45,7 +45,9 @@ export default {
             header_opacity: 0,
             show_sidebar: false,
             is_mobile: false,
-            is_nav: false
+            is_nav: false,
+            // 统计页面高度
+            height_list: []
         }
     }, 
     methods: {
@@ -54,7 +56,7 @@ export default {
             // 头部文件
             // 桌面端进行头部模糊渲染动态渲染
             if(window.screen.availWidth > 767) {
-                var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
                 this.header_opacity = (scrollTop / (this.$refs.demos.offsetTop/3));
                 if(this.$page.frontmatter.layout == 'detail')
                     if (this.header_opacity > 2.5)
@@ -63,18 +65,27 @@ export default {
                         this.is_nav = false
             }
 
-            // 文章导航栏
-            if(this.$frontmatter.layout == 'detail') {
-                var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-                for ( let nav of this.$page.headers ) {
-                    if ( scrollTop > nav.height ) {
-                        // nav.active = true
-                        document.getElementById(nav.height.toString()).classList.add('active')
-                } else {
-                    // nav.active = false
-                    document.getElementById(nav.height.toString()).classList.remove('active')
-                }}
-            }
+            // // 文章导航栏
+            // if(this.$frontmatter.layout == 'detail') {
+            //     var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
+            //     // console.log(scrollTop)
+            //     // for ( let nav of this.$page.headers ) {
+            //     //     if ( scrollTop > nav.height ) {
+            //     //         // nav.active = true
+            //     //         document.getElementById(nav.height.toString()).classList.add('active')
+            //     // } else {
+            //     //     // nav.active = false
+            //     //     document.getElementById(nav.height.toString()).classList.remove('active')
+            //     // }}
+            //     if (scrollTop > this.height_list[0]) {
+            //         for (let i=0; i < this.height_list.length-1; i++) {
+            //             if (scrollTop > this.height_list[i] && scrollTop < this.height_list[i+1]) {
+            //                 console.log(i)
+
+            //             }
+            //         }
+            //     }
+            // }
         },
         showSlide(){
             this.show_sidebar = !this.show_sidebar
@@ -83,28 +94,14 @@ export default {
     mounted() {
         // 滚动触发头部与文章页导航
         window.addEventListener('scroll', this.handleScroll, true)
-        
+
         // 触控判断
         if(window.screen.availWidth > 767) {
             document.body.addEventListener('touchstart',function(){})
             this.is_mobile = false
         } else {
             this.is_mobile = true
-        }
-
-        // 计算并绑定每个导航的距离
-        if (this.$frontmatter.layout == 'detail') {
-            var titles = document.getElementsByClassName('header-anchor')
-            for (let title of titles) {
-                for (let nav of this.$page.headers) {
-                    if ( nav.slug == title.parentElement.id ) {
-                        nav.height = title.parentElement.offsetTop
-                        console.log(title.parentElement.offsetTop)
-                        break
-                    }
-                }
-            }
-        }
+        }        
     },
     computed: {
         article_list() 

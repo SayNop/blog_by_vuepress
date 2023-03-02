@@ -3,13 +3,14 @@
         <div id="sidebar">
             <div class="sidebar_top card_border">
                 <div class="tags_brand">{{ $page.frontmatter.layout == 'detail'?'本文大纲':'文章标签' }}</div>
-                <section class="article_sidebar" v-if="$page.frontmatter.layout == 'detail'">
+                <!-- <section class="article_sidebar" v-if="$page.frontmatter.layout == 'detail'">
                     <ul>
                         <li :id="item.height" :class="'level' + item.level" v-for="item in $page.headers" :key="item.slug">
                             <a class="sidebar-link" :href="'#'+item.slug">{{ item.title }}</a>
                         </li>
                     </ul>
-                </section>
+                </section> -->
+                <nav_wrapper  v-if="$page.frontmatter.layout == 'detail'" />
                 <div class="tags" v-else>
                     <tag_lable :tag_name="item.name" v-for="item in $tag.list" :key="item.key"/>
                 </div>
@@ -38,9 +39,11 @@
 
 <script>
 import tag_lable from './tag_lable'
+import nav_wrapper from './nav'
 export default {
     components: {
         tag_lable,
+        nav_wrapper
     },
     computed: {
         count() {

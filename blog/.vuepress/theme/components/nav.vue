@@ -1,7 +1,7 @@
 <template>
     <section class="article_sidebar">
             <ul>
-                <li :id="item.height" :class="'level' + item.level" v-for="item in $page.headers" :key="item.slug">
+                <li :class="'level' + item.level" v-for="item in $page.headers" :key="item.slug">
                     <a class="sidebar-link" :href="'#'+item.slug">{{ item.title }}</a>
                 </li>
             </ul>
@@ -66,7 +66,7 @@ export default {
             for (let title of titles) {
                 this.height_list.push(title.parentElement.offsetTop)
             }
-            console.log(this.height_list)
+            // console.log(this.height_list)
         }
     }
 }

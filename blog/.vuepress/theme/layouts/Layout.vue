@@ -64,28 +64,6 @@ export default {
                     else
                         this.is_nav = false
             }
-
-            // // 文章导航栏
-            // if(this.$frontmatter.layout == 'detail') {
-            //     var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
-            //     // console.log(scrollTop)
-            //     // for ( let nav of this.$page.headers ) {
-            //     //     if ( scrollTop > nav.height ) {
-            //     //         // nav.active = true
-            //     //         document.getElementById(nav.height.toString()).classList.add('active')
-            //     // } else {
-            //     //     // nav.active = false
-            //     //     document.getElementById(nav.height.toString()).classList.remove('active')
-            //     // }}
-            //     if (scrollTop > this.height_list[0]) {
-            //         for (let i=0; i < this.height_list.length-1; i++) {
-            //             if (scrollTop > this.height_list[i] && scrollTop < this.height_list[i+1]) {
-            //                 console.log(i)
-
-            //             }
-            //         }
-            //     }
-            // }
         },
         showSlide(){
             this.show_sidebar = !this.show_sidebar

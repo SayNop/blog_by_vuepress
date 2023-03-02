@@ -56,5 +56,10 @@ module.exports = {
             },
           ],
         },
-      },
+        connection_link: {
+            github: 'github.com/SayNop',
+            gitee: 'gitee.com/WhenTimeGoesBy',
+            mail: 'fur999immer@gmail.com'
+        },
+    },
 }

@@ -30,6 +30,9 @@
     display grid
     grid-template-columns repeat(3, auto)
     margin-top 1rem
+    div > p:hover
+        cursor pointer 
+        color $theme-color
 
 .connection
     display grid
@@ -39,6 +42,11 @@
     text-align left
     font-size 0.9rem
     line-height 1.3rem
+    div > p:hover
+        cursor pointer 
+        background-color var(--tag-color)
+        border-radius 5px
+
 
 @media (max-width: 767px)
     #sidebar

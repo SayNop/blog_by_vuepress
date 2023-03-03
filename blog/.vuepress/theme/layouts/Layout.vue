@@ -59,7 +59,8 @@ export default {
                 var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
                 this.header_opacity = (scrollTop / (this.$refs.demos.offsetTop/3));
                 if(this.$page.frontmatter.layout == 'detail')
-                    if (this.header_opacity > 2.5)
+                    // if (this.header_opacity > 2.5)
+                    if (this.header_opacity > 2.7)
                         this.is_nav = true
                     else
                         this.is_nav = false

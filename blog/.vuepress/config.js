@@ -33,7 +33,14 @@ module.exports = {
                         nextText: ''
                     }
                 }
-            ]
+            ],
+            globalPagination: {
+                prevText:'上一頁', // Text for previous links.
+                nextText:'下一頁', // Text for next links.
+                lengthPerPage:'2', // Maximum number of posts per page.
+                layout:'Pagination', // Layout for pagination page
+            }
+              
         }],
         ['vuepress-plugin-code-copy', {
             selector: 'div[class*="language-"]',

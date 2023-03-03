@@ -1,15 +1,8 @@
 <template>
     <div id="info">
         <div id="sidebar">
-            <div class="sidebar_top card_border">
+            <div class="sidebar_top card_border" :style="$page.frontmatter.layout=='detail'?'min-height:1rem':''">
                 <div class="tags_brand">{{ $page.frontmatter.layout == 'detail'?'本文大纲':'文章标签' }}</div>
-                <!-- <section class="article_sidebar" v-if="$page.frontmatter.layout == 'detail'">
-                    <ul>
-                        <li :id="item.height" :class="'level' + item.level" v-for="item in $page.headers" :key="item.slug">
-                            <a class="sidebar-link" :href="'#'+item.slug">{{ item.title }}</a>
-                        </li>
-                    </ul>
-                </section> -->
                 <nav_wrapper  v-if="$page.frontmatter.layout == 'detail'" />
                 <div class="tags" v-else>
                     <tag_lable :tag_name="item.name" v-for="item in $tag.list" :key="item.key"/>

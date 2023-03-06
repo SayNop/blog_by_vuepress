@@ -60,7 +60,7 @@ module.exports = {
                 prevText:'PREV', // Text for previous links.
                 nextText:'NEXT', // Text for next links.
                 lengthPerPage:'5', // Maximum number of posts per page.
-                // layout:'home', // Layout for pagination page - 分页的布局文件，不是frontmatter的值
+                // layout:'home', // Layout for pagination page - 分页的布局文件，不能修改frontmatter的值
             }
               
         }],

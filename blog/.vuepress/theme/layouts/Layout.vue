@@ -38,10 +38,9 @@
                         <articles :articles="$pagination.pages" />
                         <Pagination />
                     </div>
+                    <footer_wrapper/>
                 </div>
-                <!-- <footer_wrapper/> -->
             </div>
-            <footer_wrapper/>
         </div>
     </div>
 </template>

@@ -9,7 +9,7 @@
         </div>
         <div id="content_container" ref="demos">
             <div id="content">
-                <div class="none" v-if="!is_mobile && is_nav" style="width: 16rem" />
+                <div class="none_slide" v-if="!is_mobile && is_nav" />
                 <sidebar :class="is_mobile ? (show_sidebar ? 'show_info' : 'hidden_info') : (is_nav ? 'article_nav' : '') "/>
                 <div id="article_container">
                     <detail v-if="$page.frontmatter.layout == 'detail'"/>
@@ -90,12 +90,15 @@ export default {
             if(window.screen.availWidth > 767) {
                 var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
                 this.header_opacity = (scrollTop / (this.$refs.demos.offsetTop/3));
-                if(this.$page.frontmatter.layout == 'detail')
+                if(this.$page.frontmatter.layout == 'detail') {
                     // if (this.header_opacity > 2.5)
                     if (this.header_opacity > 2.7)
                         this.is_nav = true
                     else
                         this.is_nav = false
+                } else {
+                    this.is_nav = false
+                }
             }
         },
         showSlide(){

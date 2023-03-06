@@ -5,13 +5,13 @@ export default ({
 	siteData // 站点元数据
 }) => {
 	// ...做一些其他的应用级别的优化
-	router.afterEach((to,from,next) => {
-		console.log(to)
-		console.log(from)
-		console.log(next)
-		window.scrollTo(0,0);
-	})
-	router.scrollBehavior = function() {
-		return { y: 0 } // 始终滚动到顶部
-	}
+	// router.afterEach((to,from,next) => {
+	// 	console.log(to)
+	// 	console.log(from)
+	// 	console.log(next)
+	// 	window.scrollTo(0,0);
+	// })
+	// router.scrollBehavior = function() {
+	// 	return { y: 0 } // 始终滚动到顶部
+	// }
 }

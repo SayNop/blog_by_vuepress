@@ -1,7 +1,7 @@
 ---
 layout: detail
 title: Test Style
-date: 2023-2-22
+date: 2023-02-22
 discription: '测试文本渲染样式与文章大纲侧边栏样式'
 category: test
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: detail
 title: Test page6
-date: 2023-3-3
+date: 2023-03-03
 discription: '测试分页器'
 category: test
 tags:

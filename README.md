@@ -1,7 +1,7 @@
 # blog_by_vuepress
 Blog based on vuepress
 
-## run&build
+## run & build
 ```shell
 # before run
 yarn install
@@ -10,6 +10,9 @@ yarn blog:dev
 # build
 yarn blog:build
 ```
+
+## visit online
+click [`here`](https://saynop.github.io/)
 
 ## node version
 v14.21.2

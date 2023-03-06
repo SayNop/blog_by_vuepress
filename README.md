@@ -4,7 +4,7 @@ Blog based on vuepress
 ## run&build
 ```shell
 # before run
-yarn add
+yarn install
 # run
 yarn blog:dev
 # build

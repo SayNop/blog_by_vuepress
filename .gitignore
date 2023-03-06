@@ -20,3 +20,4 @@ coverage/
 
 # 忽略yarn
 yarn.lock
+package-lock.json

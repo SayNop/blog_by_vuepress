@@ -4,6 +4,22 @@ module.exports = {
     plugins: [
         '@vuepress/last-updated',
         ['@vuepress/blog', {
+            directories: [
+                {
+                    // 当前分类的唯一 ID
+                    id: 'detail',
+                    // 目标文件夹
+                    dirname: 'detail',
+                    // 文章列表的路径
+                    path: '/',
+                    // 使用布局文件
+                    // layout: 'home',
+                    // itemLayout: 'detail',
+                    // 单个文章的链接
+                    // itemPermalink: '/detail/:slug'
+                    itemPermalink: '/:regular' // 默认的生成方式
+                },
+            ],
             frontmatters: [
                 {
                     id: "tag",
@@ -14,9 +30,9 @@ module.exports = {
                         layout: 'tags'
                     },
                     pagination: {
-                        lengthPerPage: 10,
-                        prevText: '',
-                        nextText: ''
+                        lengthPerPage: 3,
+                        prevText: 'PREV',
+                        nextText: 'NEXT'
                     }
                 },
                 {
@@ -28,17 +44,23 @@ module.exports = {
                         layout: 'categories'
                     },
                     pagination: {
-                        lengthPerPage: 10,
-                        prevText: '',
-                        nextText: ''
+                        lengthPerPage: 3,
+                        prevText: 'PREV',
+                        nextText: 'NEXT'
                     }
                 }
             ],
             globalPagination: {
-                prevText:'上一頁', // Text for previous links.
-                nextText:'下一頁', // Text for next links.
-                lengthPerPage:'2', // Maximum number of posts per page.
-                layout:'Pagination', // Layout for pagination page
+                sorter: (prev, next) => {
+                    const dayjs = require('dayjs')
+                    const prevTime = dayjs(prev.frontmatter.date)
+                    const nextTime = dayjs(next.frontmatter.date)
+                    return prevTime - nextTime > 0 ? -1 : 1
+                },
+                prevText:'PREV', // Text for previous links.
+                nextText:'NEXT', // Text for next links.
+                lengthPerPage:'5', // Maximum number of posts per page.
+                // layout:'home', // Layout for pagination page - 分页的布局文件，不是frontmatter的值
             }
               
         }],

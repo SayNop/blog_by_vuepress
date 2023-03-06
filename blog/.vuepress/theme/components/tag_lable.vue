@@ -9,7 +9,7 @@ export default {
     ],
     methods: {
         go_to_tag_list(path) {
-            this.$router.push('tags' + path)
+            this.$router.push('/tags/' + path)
         }
     }
 }

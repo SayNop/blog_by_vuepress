@@ -5,7 +5,7 @@
                 <div class="tags_brand">{{ $page.frontmatter.layout == 'detail'?'本文大纲':'文章标签' }}</div>
                 <nav_wrapper  v-if="$page.frontmatter.layout == 'detail'" />
                 <div class="tags" v-else>
-                    <tag_lable :tag_name="item.name" v-for="item in $tag.list" :key="item.key"/>
+                    <tag_lable :tag_name="item.name" v-for="item in $tag.list" :key="item.key" />
                 </div>
             </div>
             <div class="sidebar_bottom card_border">

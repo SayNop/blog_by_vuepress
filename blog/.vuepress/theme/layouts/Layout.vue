@@ -13,9 +13,33 @@
                 <sidebar :class="is_mobile ? (show_sidebar ? 'show_info' : 'hidden_info') : (is_nav ? 'article_nav' : '') "/>
                 <div id="article_container">
                     <detail v-if="$page.frontmatter.layout == 'detail'"/>
-                    <articles :articles="article_list" v-else-if="$page.frontmatter.layout == 'home'"/>
+                    <!-- <articles :articles="article_list" v-else-if="$page.frontmatter.layout == 'home'"/> -->
+                    <div v-else-if="$page.frontmatter.layout == 'Layout'">
+                        <articles :articles="$pagination.pages"/>
+                        <Pagination />
+                    </div>
                     <category_list v-else-if="$page.frontmatter.layout == 'categories'" />
+                    <tag_list v-else-if="$page.frontmatter.layout == 'tags'" />
+                    <div v-else-if="/(.+) Category/.test($page.frontmatter.title)">
+                        <!-- <div>{{ $page.frontmatter.title.match(/(.+) Category/)[1] }}</div> -->
+                        <div class="card_border category_tag_key">
+                            <span style="display: inline-block;vertical-align: bottom;margin-right: 10px;" class="icon"><category_icon /></span>
+                            {{ $currentCategory.key }}
+                        </div>
+                        <!-- <articles :articles="$currentCategory.pages" /> -->
+                        <articles :articles="$pagination.pages" />
+                        <Pagination />
+                    </div>
+                    <div v-else-if="/(.+) Tag/.test($page.frontmatter.title)">
+                        <div class="card_border category_tag_key">
+                            <span style="display: inline-block;vertical-align: bottom;margin-right: 10px;" class="icon"><tag_icon /></span>
+                            {{ $currentTag.key }}
+                        </div>
+                        <articles :articles="$pagination.pages" />
+                        <Pagination />
+                    </div>
                 </div>
+                <!-- <footer_wrapper/> -->
             </div>
             <footer_wrapper/>
         </div>
@@ -29,6 +53,10 @@ import sidebar from '../components/sidebar'
 import articles from '../components/articles'
 import footer_wrapper from '../components/footer'
 import category_list from '../components/category_list'
+import tag_list from '../components/tag_list'
+import category_icon from '../components/icons/category'
+import tag_icon from '../components/icons/tag'
+import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
 
 
 export default {
@@ -38,7 +66,11 @@ export default {
         sidebar,
         articles,
         footer_wrapper,
-        category_list
+        category_list,
+        tag_list,
+        category_icon,
+        tag_icon,
+        Pagination
     },
     data() {
         return {
@@ -83,6 +115,7 @@ export default {
         }        
     },
     computed: {
+        // 未使用分页器时使用
         article_list() 
         {
             let res = []

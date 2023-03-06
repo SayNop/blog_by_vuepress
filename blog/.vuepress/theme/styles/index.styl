@@ -22,6 +22,7 @@ ul
     --divider-color #3c3c3c1f
     --table-h-color #f9f9f9
     --title-color #374151
+    --disable-font #ddd
     
 
     
@@ -36,6 +37,7 @@ ul
     --tag-color #2f2f2f
     --divider-color #5454547a
     --table-h-color #1a1a1a
+    --disable-font #666
 
 html
     font-size 16px
@@ -171,6 +173,25 @@ html
     position fixed
     top 80px
     z-index 9
+
+.category_tag_key
+    min-height 5vh
+    margin-bottom 1.5rem
+    padding 15px 0 15px 30px
+    font-weight 900
+
+.pagination
+    display table !important
+    margin 0 auto !important 
+    & > li > a
+        color var(--font-color) !important
+        background-color var(--card-bg-color) !important
+    & > .disabled > a
+        color var(--disable-font) !important
+    & > .active > a
+        color var(--card-bg-color) !important
+        background-color $theme-color !important
+        border-color $theme-color !important
 
 // 移动端适配
 @media (max-width: 767px)

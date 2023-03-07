@@ -3,7 +3,7 @@
         <!-- <div>{{$page}}</div>  -->
         <div class="frontmatter_info">
             <h1 class="frontmatter-title">{{ $frontmatter.title }}</h1>
-            <div class="frontmatter-date">{{  $frontmatter.date }}</div>
+            <div class="frontmatter-date">{{  $frontmatter.date.slice(0,10) }}</div>
             <div class="card_tag frontmatter_tags">
                 <span class="icon">
                     <category_icon />

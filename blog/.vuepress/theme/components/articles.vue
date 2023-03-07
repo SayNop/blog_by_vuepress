@@ -20,7 +20,7 @@
             <div class="article_card card_border" @click="go_to_detail(item.regularPath)">
                 <div class="card_title_container">
                     <div class="card_title article_title">{{ item.frontmatter.title }}</div> 
-                    <div class="article_time">{{ item.frontmatter.date }}</div>
+                    <div class="article_time">{{ item.frontmatter.date.slice(0,10) }}</div>
                 </div>
                 <div class="card_content_container">
                     <div class="card_content">{{ item.frontmatter.discription }}</div>

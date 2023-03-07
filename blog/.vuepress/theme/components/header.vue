@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="header_container">
-            <div><a class="header_title" href="/">Leopold</a></div>
+            <div><a class="header_title" href="/">Leopold's Blog</a></div>
             <div class="appearance">
                 <button class="switch" type="button" @click="handleDark">
                     <span class="check">

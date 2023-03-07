@@ -101,15 +101,12 @@ export default {
         // 触控判断
         // if(window.screen.availWidth > 767) {
         if(document.body.clientWidth > 767) {
-            console.log(document.body.clientWidth)
             // 滚动触发头部与文章页导航
             window.addEventListener('scroll', this.handleScroll, true)
             document.body.addEventListener('touchstart',function(){})
             this.is_mobile = false
-            console.log(this.is_mobile)
         } else {
             this.is_mobile = true
-            console.log(this.is_mobile)
         }        
     },
     computed: {

@@ -13,7 +13,7 @@
                             <span style="display: inline-block;vertical-align: bottom;" class="icon"><category_icon /></span>
                             <span> {{ article.frontmatter.category }}</span>
                         </div>
-                        <div class="article_list_date">{{ article.frontmatter.date }}</div>
+                        <div class="article_list_date">{{ article.frontmatter.date.slice(0,10) }}</div>
                     </li>
                 </ul>
             </div>

@@ -14,7 +14,7 @@
                             <!-- <span v-for="tag in article.frontmatter.tags" :key="tag"> {{ tag }}</span> -->
                             <span> {{ article.frontmatter.tags.join(', ') }}</span>
                         </div>
-                        <div class="article_list_date">{{ article.frontmatter.date }}</div>
+                        <div class="article_list_date">{{ article.frontmatter.date.slice(0,10) }}</div>
                     </li>
                 </ul>
             </div>

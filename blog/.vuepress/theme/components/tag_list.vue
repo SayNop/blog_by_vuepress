@@ -3,7 +3,7 @@
         <div class="category_brand card_border"><span >所有标签</span></div>
         <div class="card_border category_card" v-for="item in $tag.list" :key="item.key">
             <div class="category_name"  @click="go_to_tag_list(item.path)">{{ item.name }}</div>
-            <div class="category_count"  @click="go_to_tag_list(item.path)">共计 {{ item.pages.length }} 篇</div>
+            <div class="category_count"  @click="go_to_tag_list(item.path)">TOP 10 /共计 {{ item.pages.length }} 篇</div>
             <div class="category_title">
                 <ul>
                     <li class="article_info" v-for="article in item.pages.slice(0, 10)" :key="article.title">

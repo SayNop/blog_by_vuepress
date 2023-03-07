@@ -86,29 +86,30 @@ export default {
         {
             // 头部文件
             // 桌面端进行头部模糊渲染动态渲染
-            if(window.screen.availWidth > 767) {
-                var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
-                this.header_opacity = (scrollTop / (this.$refs.demos.offsetTop/3));
-                if(this.$page.frontmatter.layout == 'detail' && this.header_opacity > 2.7)
-                    this.is_nav = true
-                else
-                    this.is_nav = false
-            }
+            var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
+            this.header_opacity = (scrollTop / (this.$refs.demos.offsetTop/3));
+            if(this.$page.frontmatter.layout == 'detail' && this.header_opacity > 2.7)
+                this.is_nav = true
+            else
+                this.is_nav = false
         },
         showSlide(){
             this.show_sidebar = !this.show_sidebar
         }
     },
     mounted() {
-        // 滚动触发头部与文章页导航
-        window.addEventListener('scroll', this.handleScroll, true)
-
         // 触控判断
-        if(window.screen.availWidth > 767) {
+        // if(window.screen.availWidth > 767) {
+        if(document.body.clientWidth > 767) {
+            console.log(document.body.clientWidth)
+            // 滚动触发头部与文章页导航
+            window.addEventListener('scroll', this.handleScroll, true)
             document.body.addEventListener('touchstart',function(){})
             this.is_mobile = false
+            console.log(this.is_mobile)
         } else {
             this.is_mobile = true
+            console.log(this.is_mobile)
         }        
     },
     computed: {

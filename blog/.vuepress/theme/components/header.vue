@@ -72,8 +72,9 @@ export default {
             localStorage.setItem('theme', 'light')
             this.is_dark = false
         }
-        window.addEventListener('scroll', this.handleScroll, true)
-        if(window.screen.availWidth > 767) document.body.addEventListener('touchstart',function(){})
+        // window.addEventListener('scroll', this.handleScroll, true)
+        // if(window.screen.availWidth > 767) document.body.addEventListener('touchstart',function(){})
+        if(document.body.clientWidth > 767) document.body.addEventListener('touchstart',function(){})
     }
 }
 </script>

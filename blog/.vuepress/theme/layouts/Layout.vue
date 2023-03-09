@@ -14,7 +14,7 @@
                 <div id="article_container">
                     <detail v-if="$page.frontmatter.layout == 'detail'"/>
                     <!-- <articles :articles="article_list" v-else-if="$page.frontmatter.layout == 'home'"/> -->
-                    <div v-else-if="$page.frontmatter.layout == 'Layout'">
+                    <div v-else-if="$page.frontmatter.layout == 'Layout' || $page.frontmatter.layout == 'home'">
                         <articles :articles="$pagination.pages"/>
                         <Pagination />
                     </div>

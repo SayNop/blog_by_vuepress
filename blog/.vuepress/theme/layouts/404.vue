@@ -13,4 +13,4 @@
 
 <style scoped lang="stylus">
     @import '../styles/404'
-</style>>
+</style>

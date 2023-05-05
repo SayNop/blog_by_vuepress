@@ -8,7 +8,9 @@
                 <ul>
                     <li class="article_info" v-for="article in item.pages.slice(0, 10)" :key="article.title">
                         <!-- {{ article }} -->
-                        <div class="article_list_title" @click="go_to_detail(article.path)">{{ article.title }} </div>
+                        <div class="article_list_title" @click="go_to_detail(article.path)">
+                            <span class="article_hover">{{ article.title }}</span>
+                        </div>
                         <div class="article_list_tags">
                             <span style="display: inline-block;vertical-align: bottom;" class="icon"><category_icon /></span>
                             <span> {{ article.frontmatter.category }}</span>

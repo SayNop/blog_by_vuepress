@@ -1,6 +1,12 @@
 module.exports = {
     title: "Leopold's blog",
     description: 'Blog powerd by vuepress',
+    head: [
+        [
+            'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
+            { rel: 'icon', href: 'omega-sign.png' }
+        ]
+    ],
     plugins: [
         '@vuepress/last-updated',
         ['@vuepress/blog', {

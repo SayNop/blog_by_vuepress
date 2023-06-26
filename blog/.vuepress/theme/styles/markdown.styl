@@ -388,14 +388,16 @@ code, kbd, samp, pre
 
 .content__default .line-numbers-wrapper 
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 3;
-        border-right: 1px solid var(--divider-color);
-        padding 1.25rem 0;
-        width: 32px;
-        text-align: center;
+        top: 0
+        bottom: 0
+        left: 0
+        z-index: 3
+        border-right: 1px solid var(--divider-color)
+        // padding 1.25rem 0;
+        padding 1rem 0
+        // width: 32px;
+        width: 2rem
+        text-align: center
         line-height: $code-line-height
         font-size: $code-font-size
         color: $code-line-number-color
@@ -512,6 +514,10 @@ code, kbd, samp, pre
     content: 'vue';
     }
 
+    div[class~='language-sql']:before {
+    content: 'sql';
+    }
+
     div[class~='language-systemd']:before {
     content: 'conf';
     }
@@ -522,9 +528,12 @@ code, kbd, samp, pre
     div[class*=language-].macos pre
         padding-left 1rem
     div[class*=language-].macos .line-numbers-wrapper
-        padding-top: 40px;
-        width: 32px;
-        border-right: 0px;
+        // padding-top: 41px;
+        // width: 32px;
+        // border-right: 0px;
+        padding-top: 2.6rem
+        width: 2rem
+        border-right: 0
         opacity: .3
         &:hover
             font-weight: 600;

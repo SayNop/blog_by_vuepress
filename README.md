@@ -11,9 +11,6 @@ yarn blog:dev
 yarn blog:build
 ```
 
-## visit online
-click [here](https://saynop.github.io/)
-
 ## node version
 v14.21.2
 
@@ -21,3 +18,14 @@ v14.21.2
 vuepress = "1.9.8"<br>
 @vuepress/plugin-blog = "1.9.4"<br>
 vuepress-plugin-code-copy = "1.0.6"<br>
+
+
+## visit online
+click [here](https://saynop.github.io/)
+
+
+## update online
+```bash
+cd ../blog_by_vuepress && yarn blog:build
+cd ../SayNop.github.io && ./update.sh
+```

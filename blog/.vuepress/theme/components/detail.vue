@@ -16,6 +16,21 @@
             </div>
         </div>
         <Content/>
+        <script src="https://giscus.app/client.js"
+            data-repo="SayNop/SayNop.github.io"
+            data-repo-id="R_kgDOIlAnJQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIlAnJc4CYVx8"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            :data-theme="comment_dark ? 'dark_protanopia' : 'light_protanopia'"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 </template>
 
@@ -28,6 +43,11 @@ import category_icon from './icons/category.vue'
 import tag_icon from './icons/tag.vue'
 export default {
     name: 'detail',
+    data() {
+        return {
+            comment_dark: false
+        }
+    },
     components: {
         category_lable,
         tag_lable,
@@ -36,11 +56,25 @@ export default {
     },
     mounted() {
         document.documentElement.setAttribute('style', 'overflow: scroll;scroll-behavior: smooth;');
+        if( localStorage.getItem('theme') ) {
+            if( localStorage.getItem('theme') == 'dark' ) {
+                this.comment_dark=true
+            } else {
+                this.comment_dark=false
+            }
+        } else {
+            localStorage.setItem('theme', 'light')
+            this.comment_dark = false
+        }
+        window.addEventListener("storage", function(){
+            this.comment_dark = window.localStorage.getItem('theme') == 'dark' ? true : false;
+            console.log(this.comment_dark)
+        })
     }
 }
 </script>
 
 <style scoped lang="stylus">
-    // scoped: 该组件才能使用的样式
-    @import '../styles/detail'
+// scoped: 该组件才能使用的样式
+@import '../styles/detail'
 </style>

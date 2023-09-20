@@ -378,8 +378,11 @@ code, kbd, samp, pre
         transition: background-color 0.5s;
 
 
-.content__default div[class*='language-'].line-numbers-mode
-        padding-left: 1rem;
+// .content__default div[class*='language-'].line-numbers-mode
+//         padding-left: 1rem;
+
+.content__default div[class*=language-] pre
+        padding-left 1rem
 
 
 // .content__default div[class*='language-'].line-numbers-mode pre
@@ -523,10 +526,10 @@ code, kbd, samp, pre
     }
 
      // ****** macos ******
-    div[class*='language-'].macos.line-numbers-mode
-        padding-left: 0;
-    div[class*=language-].macos pre
-        padding-left 1rem
+    // div[class*='language-'].macos.line-numbers-mode
+    //     padding-left: 0;
+    // div[class*=language-].macos pre
+    //     padding-left 1rem
     div[class*=language-].macos .line-numbers-wrapper
         // padding-top: 41px;
         // width: 32px;
@@ -568,7 +571,7 @@ code, kbd, samp, pre
                 content: ' ';
             }
             pre {
-                margin-bottom: 0;
+                // margin-bottom: 0;
                 code {
                     // color: #c94646;
                     font-weight: 550;

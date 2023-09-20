@@ -71,7 +71,7 @@ module.exports = {
               
         }],
         ['vuepress-plugin-code-copy', {
-            selector: 'div[class*="language-"]',
+            selector: 'div[class*="language-"] pre',
             align: 'top',
             backgroundTransition: false,
         }]

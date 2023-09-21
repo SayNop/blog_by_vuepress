@@ -55,7 +55,7 @@ export default {
         tag_icon
     },
     mounted() {
-        document.documentElement.setAttribute('style', 'overflow: scroll;scroll-behavior: smooth;');
+        document.documentElement.setAttribute('style', 'overflow-y: scroll;scroll-behavior: smooth;');
         if( localStorage.getItem('theme') ) {
             if( localStorage.getItem('theme') == 'dark' ) {
                 this.comment_dark=true

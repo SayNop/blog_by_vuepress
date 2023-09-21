@@ -88,7 +88,8 @@ export default {
             // 桌面端进行头部模糊渲染动态渲染
             var scrollTop = window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop;
             this.header_opacity = (scrollTop / (this.$refs.demos.offsetTop/3));
-            if(this.$page.frontmatter.layout == 'detail' && this.header_opacity > 2.7)
+            // document.documentElement.clientHeight * 0.8(80vh) - header and margin = > document.body.clientHeight * 0.000888888888
+            if(this.$page.frontmatter.layout == 'detail' && scrollTop > document.documentElement.clientHeight * 0.8 - 80)
                 this.is_nav = true
             else
                 this.is_nav = false

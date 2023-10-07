@@ -64,8 +64,16 @@ html
 #home
     display flex
     flex-direction column
-    background $bg-pic no-repeat center / cover
-    background-attachment fixed
+    // background $bg-pic no-repeat center / cover
+    // background-attachment fixed
+    &:before
+        content ' '
+        position fixed
+        top 0
+        right 0
+        bottom 0
+        left 0
+        background $bg-pic no-repeat center / cover
 
 #content_container
     width 82%

@@ -63,9 +63,9 @@ module.exports = {
                     const nextTime = dayjs(next.frontmatter.date)
                     return prevTime - nextTime > 0 ? -1 : 1
                 },
-                prevText:'PREV', // Text for previous links.
-                nextText:'NEXT', // Text for next links.
-                lengthPerPage:'5', // Maximum number of posts per page.
+                prevText:'< Previous', // Text for previous links.
+                nextText:'Next >', // Text for next links.
+                lengthPerPage: 5, // Maximum number of posts per page.
                 // layout:'home', // Layout for pagination page - 分页的布局文件，不能修改frontmatter的值
             }
               

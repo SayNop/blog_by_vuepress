@@ -8,14 +8,14 @@
                 <span class="icon">
                     <category_icon />
                 </span>
-                <category_lable :datas="$frontmatter.category"/>
+                <category_lable :datas="$frontmatter.category" />
                 <span class="icon" style="margin-right: 5px">
                     <tag_icon />
                 </span>
                 <tag_lable :tag_name="tag"  v-for="tag in $frontmatter.tags" :key="tag" />
             </div>
         </div>
-        <Content/>
+        <Content />
         <script src="https://giscus.app/client.js"
             data-repo="SayNop/SayNop.github.io"
             data-repo-id="R_kgDOIlAnJQ"

@@ -13,6 +13,7 @@ ul
     --card-bg-color #fff
     --card-shadow rgba(0,0,0,.2)
     --header-color #ffffffb3
+    --brand-color #213547
     --font-color #213547
     --code-color #476582
     --code-bg-color #292d3e
@@ -31,7 +32,8 @@ ul
     --card-bg-color #242424
     --card-shadow rgba(255,255,255,.2)
     --header-color #000000b3
-    --font-color #ffffffde
+    --brand-color #ffffffde
+    --font-color #adbac7
     --code-color #c9def1
     --code-bg-color #1a1a1a
     --tag-color #2f2f2f
@@ -64,8 +66,9 @@ html
 #home
     display flex
     flex-direction column
-    // background $bg-pic no-repeat center / cover
-    // background-attachment fixed
+    width 91%
+    margin-left: auto
+    margin-right: auto
     &:before
         content ' '
         position fixed
@@ -73,20 +76,13 @@ html
         right 0
         bottom 0
         left 0
-        background $bg-pic no-repeat center / cover
-
-#content_container
-    width 82%
-    margin 0 auto
-
-#content
-    display flex
+        background $bg-pic no-repeat center / cover   
 
 .tags_brand
     padding 1.2rem
     background-color $theme-color
     font-weight 900
-    color var(--font-color)
+    color var(--brand-color)
 
 .tags
     padding 15px
@@ -95,7 +91,6 @@ html
         margin-bottom 10px
 
 #article_container
-    margin-left 24px
     flex-grow 1
     width 50%
 
@@ -180,11 +175,12 @@ html
 
 .article_nav
     position fixed
-    top 80px
+    top 110px
     z-index 9
 
 .none_slide
     width $sidebar-width
+    margin-right 1.5rem
 
 .category_tag_key
     min-height 5vh
@@ -194,16 +190,27 @@ html
 
 .pagination
     display table !important
-    margin 0 auto !important 
+    margin 0 auto !important
+    font-size 14px
     & > li > a
         color var(--font-color) !important
         background-color var(--card-bg-color) !important
+        border-radius 0.3rem !important
+        border-color transparent !important
+        margin 0 .5rem
+        padding 2px 9px !important
+        &:hover
+            color $theme-color !important
     & > .disabled > a
         color var(--disable-font) !important
+        &:hover
+           color var(--disable-font) !important
     & > .active > a
         color var(--card-bg-color) !important
         background-color $theme-color !important
         border-color $theme-color !important
+        &:hover
+            color var(--card-bg-color) !important
 
 .giscus
     margin-top 40px
@@ -211,6 +218,8 @@ html
 .search-box
     padding-top 3px
     padding-bottom 3px
+    input
+        border-width 2px !important
 
 // 移动端适配
 @media (max-width: 767px)
@@ -221,7 +230,7 @@ html
         width 100%
         height 100%
         left 0
-        padding 100px 20px 0 20px
+        padding-top 100px
         overflow auto
         background rgba(255,255,255,.7)
     .show_info
@@ -232,19 +241,15 @@ html
     .hidden_info
         opacity 0
         visibility hidden
-    #article_container
-        margin-left 0
     .search-box input 
         left 0 !important
         padding 0 18px !important
-        // background-color transparent !important
         background-image none !important
         mask url(/assets/img/search.83621669.svg)
         mask-size 40%
         mask-repeat no-repeat
         mask-position 60% 50%
         background-color var(--font-color) !important
-        // mask url(/assets/img/search.83621669.svg)
     .search-box input:focus
         width 6rem !important
         background #fff url(/assets/img/search.83621669.svg) 0.6rem 0.5rem no-repeat !important

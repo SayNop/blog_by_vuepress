@@ -205,9 +205,12 @@ html
         background-color $theme-color !important
         border-color $theme-color !important
 
-.giscus {
-    margin-top: 40px;
-}
+.giscus
+    margin-top 40px
+
+.search-box
+    padding-top 3px
+    padding-bottom 3px
 
 // 移动端适配
 @media (max-width: 767px)
@@ -221,8 +224,6 @@ html
         padding 100px 20px 0 20px
         overflow auto
         background rgba(255,255,255,.7)
-    .appearance
-        display flex
     .show_info
         opacity 1
         visibility visible
@@ -233,6 +234,23 @@ html
         visibility hidden
     #article_container
         margin-left 0
+    .search-box input 
+        left 0 !important
+        padding 0 18px !important
+        // background-color transparent !important
+        background-image none !important
+        mask url(/assets/img/search.83621669.svg)
+        mask-size 40%
+        mask-repeat no-repeat
+        mask-position 60% 50%
+        background-color var(--font-color) !important
+        // mask url(/assets/img/search.83621669.svg)
+    .search-box input:focus
+        width 6rem !important
+        background #fff url(/assets/img/search.83621669.svg) 0.6rem 0.5rem no-repeat !important
+        background-size 1rem
+        padding: 0 0.5rem 0 1.5rem !important
+        mask none
 
 
 @keyframes animation_icon

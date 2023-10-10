@@ -3,6 +3,7 @@
         <div class="header_container">
             <div><a class="header_title" href="/">Leopold's Blog</a></div>
             <div class="appearance">
+                <SearchBox />
                 <button class="switch" type="button" @click="handleDark">
                     <span class="check">
                         <span class="icon" style="display: block;">
@@ -35,8 +36,13 @@
 </template>
 
 <script>
+import SearchBox from '@SearchBox'
+
 export default {
     name: 'header_wrapper',
+    components: {
+        SearchBox
+    },
     data() {
         return {
             is_dark: false,

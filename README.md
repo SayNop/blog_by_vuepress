@@ -15,7 +15,11 @@ yarn blog:build
 v14.21.2
 
 ## package
-vuepress = "1.9.8"<br>
+<!-- yarn add -D vuepress
+yarn add -D @vuepress/plugin-blog
+yarn add -D vuepress-plugin-code-copy
+yarn add -D prismjs -->
+vuepress = "1.9.10"<br>
 @vuepress/plugin-blog = "1.9.4"<br>
 vuepress-plugin-code-copy = "1.0.6"<br>
 

@@ -6,16 +6,13 @@
   "repository": "git@github.com:SayNop/blog_by_vuepress.git",
   "author": "Leopold",
   "license": "MIT",
-  "devDependencies": {
-    "@vuepress/plugin-blog": "^1.9.4",
-    "vuepress": "^1.9.8"
-  },
   "scripts": {
     "blog:dev": "vuepress dev blog",
     "blog:build": "vuepress build blog"
   },
-  "dependencies": {
-    "prismjs": "^1.29.0",
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.4",
+    "vuepress": "^1.9.10",
     "vuepress-plugin-code-copy": "^1.0.6"
   }
 }

@@ -74,8 +74,10 @@ module.exports = {
             selector: 'div[class*="language-"] pre',
             align: 'top',
             backgroundTransition: false,
+        }],
+        ['@vuepress/search', {
+            searchMaxSuggestions: 10
         }]
-        // '@vuepress/plugin-toc'
     ],
     markdown: {
         lineNumbers: true

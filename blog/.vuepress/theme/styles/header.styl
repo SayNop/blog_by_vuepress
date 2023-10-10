@@ -3,6 +3,8 @@
     padding 1rem 9% 
     z-index 9
     background var(--header-color)
+    -webkit-backdrop-filter saturate(50%) blur(8px)
+    backdrop-filter saturate(50%) blur(8px)
     transition-property opacity
     transition-timing-function cubic-bezier(.4,0,.2,1)
     transition-duration .15s
@@ -15,11 +17,15 @@
 
 .header_title
     text-decoration none
-    color var(--font-color)
+    // color var(--font-color)
+    color $theme-color-dark
     font-size 1.2rem
     font-weight 700
     &:hover, &:active
-        opacity: .6
+        opacity .6
+
+.appearance
+    display flex
 
 .switch
     border-radius 0.5rem;
@@ -53,7 +59,7 @@
         .btn_top
             top 10px
         .btn_middle
-            top 50%
-            margin-top -1px
+            top 47%
+            // margin-top -1px
         .btn_bottom
             bottom 10px

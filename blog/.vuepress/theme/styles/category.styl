@@ -62,6 +62,7 @@
 
 .article_other_info
     width 35%
+    min-width 18rem
     display flex
     justify-content space-between
 
@@ -83,5 +84,10 @@
     //     // vertical-align middle
     .article_other_info
         width auto
+
+@media (max-width: 1000px)
+    .article_other_info
+        width auto
+        min-width inherit
     .article_list_tags
         display none

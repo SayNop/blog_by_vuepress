@@ -220,6 +220,13 @@ html
     padding-bottom 3px
     input
         border-width 2px !important
+        background-color var(--card-bg-color) !important
+        background-position-y 0.4rem !important
+
+@media (max-width: 959px)
+    .search-box input
+        width inherit !important
+
 
 // 移动端适配
 @media (max-width: 767px)
@@ -241,7 +248,10 @@ html
     .hidden_info
         opacity 0
         visibility hidden
+    .search-box
+        margin-right 0 !important
     .search-box input 
+        width 0 !important
         left 0 !important
         padding 0 18px !important
         background-image none !important
@@ -251,11 +261,13 @@ html
         mask-position 60% 50%
         background-color var(--font-color) !important
     .search-box input:focus
-        width 6rem !important
-        background #fff url(/assets/img/search.83621669.svg) 0.6rem 0.5rem no-repeat !important
+        width 100% !important
+        background var(--card-bg-color) url(/assets/img/search.83621669.svg) 0.6rem 0.5rem no-repeat !important
         background-size 1rem
-        padding: 0 0.5rem 0 1.5rem !important
+        padding 0 0.5rem 0 1.5rem !important
         mask none
+    .search-box .suggestions
+        right -5rem !important
 
 
 @keyframes animation_icon

@@ -37,8 +37,8 @@ module.exports = {
                     },
                     pagination: {
                         lengthPerPage: 3,
-                        prevText: 'PREV',
-                        nextText: 'NEXT'
+                        prevText: '< Previous',
+                        nextText: 'Next >'
                     }
                 },
                 {
@@ -51,8 +51,8 @@ module.exports = {
                     },
                     pagination: {
                         lengthPerPage: 3,
-                        prevText: 'PREV',
-                        nextText: 'NEXT'
+                        prevText: '< Previous',
+                        nextText: 'Next >'
                     }
                 }
             ],
@@ -67,8 +67,10 @@ module.exports = {
                 nextText:'Next >', // Text for next links.
                 lengthPerPage: 5, // Maximum number of posts per page.
                 // layout:'home', // Layout for pagination page - 分页的布局文件，不能修改frontmatter的值
-            }
-              
+            },
+            sitemap: {
+                hostname: 'https://saynop.github.io',
+            },
         }],
         ['vuepress-plugin-code-copy', {
             selector: 'div[class*="language-"] pre',

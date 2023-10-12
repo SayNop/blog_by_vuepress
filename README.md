@@ -12,7 +12,7 @@ yarn blog:build
 ```
 
 ## node version
-v14.21.2
+v16.20.0
 
 ## package
 <!-- yarn add -D vuepress

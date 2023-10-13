@@ -12,13 +12,13 @@ code, kbd, samp, pre
 
     // 标题
     h1, h2, h3, h4, h5, h6
-        margin: .72em 0;
+        margin: .72rem 0;
         font-weight 600
         outline none
         a
             display none
     h1
-        letter-spacing -0.02em
+        letter-spacing -0.02rem
         line-height 2.5rem
         font-size 1.75rem
         //font-size 1.5rem
@@ -26,13 +26,13 @@ code, kbd, samp, pre
         border-top 1px solid var(--divider-color)
         margin 3rem 0 1rem
         padding-top 1.5rem
-        letter-spacing -0.02em
+        letter-spacing -0.02rem
         line-height 2rem
         font-size 1.5rem
         // font-size 1.2rem
     h3
         margin 2rem 0 0
-        letter-spacing -0.01em
+        letter-spacing -0.01rem
         line-height 1.75rem
         font-size 1.25rem
         // font-size: 1rem;
@@ -67,7 +67,7 @@ code, kbd, samp, pre
         // margin-bottom: 16px;
         // margin-top: 16px;
         // padding: 10px 10px 10px 20px;
-        // font-size: 0.9em;
+        // font-size: 0.9rem;
         // background: #f7f7f7;
         // border-left: 3px solid #1f6fb5;
         // color: #6a737d;
@@ -106,7 +106,7 @@ code, kbd, samp, pre
 
     /*  todo item 对齐 */
     input[type="checkbox"] {
-        margin-top: calc(1em - 2px);
+        margin-top: calc(1rem - 2px);
         margin-right: 5px;
         left: -3px;
     }
@@ -254,7 +254,7 @@ code, kbd, samp, pre
 .content__default h1 > code,
 .content__default h2 > code,
 .content__default h3 > code
-        font-size 0.9em
+        font-size 0.9rem
 
 .content__default a > code
         color $theme-color
@@ -274,7 +274,7 @@ code, kbd, samp, pre
     }
 
     pre {
-        line-height: 1.7em;
+        line-height: 1.7rem;
         overflow: auto;
         padding: 18px 15px 12px;
         border-left: 5px solid #f7f7f7;
@@ -288,7 +288,7 @@ code, kbd, samp, pre
         margin: 0;
         overflow: initial;
         line-height: inherit;
-        font-size: .85em;
+        font-size: .85rem;
         white-space: pre;
         background: 0 0;
 
@@ -305,14 +305,14 @@ code, kbd, samp, pre
         overflow-x auto
         transition background-color 0.5s
         border 2px solid transparent
+        border-radius 8px
         &:hover
             border-color $theme-color 
 
 
 @media (min-width: 640px)
     .content__default div[class*='language-']
-        border-radius: 8px;
-        margin: 16px 0;
+        margin: 1rem 0;
 
 @media (max-width: 639px)
     .content__default li div[class*='language-']
@@ -341,17 +341,16 @@ code, kbd, samp, pre
 
 
 .content__default [class*='language-'] pre
-        position: relative;
-        z-index: 1;
+        // position: relative;  // 复制按钮不随代码块overflow而移动
+        // z-index: 1;
         margin: 0;
-        padding: 16px 0;
+        padding: 1rem 2.5rem;
         background: transparent;
         overflow-x: auto;
 
 
 .content__default [class*='language-'] > code
-        display: block;
-        padding: 0 24px;
+        // display contents // display: block;  -  手机safari字体大小异常 电脑safari与chrome不受影响 
         width: fit-content;
         line-height: $code-line-height
         font-size: $code-font-size
@@ -380,9 +379,6 @@ code, kbd, samp, pre
 
 // .content__default div[class*='language-'].line-numbers-mode
 //         padding-left: 1rem;
-
-.content__default div[class*=language-] pre
-        padding-left 1rem
 
 
 // .content__default div[class*='language-'].line-numbers-mode pre
@@ -543,8 +539,7 @@ code, kbd, samp, pre
             opacity: 1
     div[class*='language-'] {
         &.macos {
-            margin: 0 0 24px;
-            margin-bottom: 24px;
+            margin: 0 0 1.5rem
             border-radius: 7px;
             box-shadow: 0 0 10px var(--card-shadow);
             -webkit-transform: translateZ(0);

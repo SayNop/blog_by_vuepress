@@ -22,10 +22,6 @@ vuepress = "1.9.10"<br>
 @vuepress/plugin-blog = "1.9.4"<br>
 vuepress-plugin-code-copy = "1.0.6"<br>
 
-## visit online
-click [here](https://saynop.github.io/)
-
-
 ## update online
 ```bash
 cd ../blog_by_vuepress && yarn blog:build

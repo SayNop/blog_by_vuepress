@@ -11,6 +11,9 @@ yarn blog:dev
 yarn blog:build
 ```
 
+## article directory
+`./blog/detail`
+
 ## node version
 v16.20.0
 
@@ -24,6 +27,8 @@ vuepress-plugin-code-copy = "1.0.6"<br>
 
 ## update online
 ```bash
+cp ~/Desktop/notes/*  ./blog/detail
 cd ../blog_by_vuepress && yarn blog:build
+rm ./blog/detail/*
 cd ../SayNop.github.io && ./update.sh
 ```
